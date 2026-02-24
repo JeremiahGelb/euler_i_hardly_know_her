@@ -18,7 +18,7 @@ FROM gcc:15.2.0 as runtime
 WORKDIR /app
 
 # Copy the built executable from the builder stage
-COPY --from=builder /app/dependenc /app/dependenc
+COPY --from=builder /app/run_euler /app/run_euler
 
 # Set the entry point command to run the executable
-CMD ["./dependenc"]
+CMD ["./run_euler"]

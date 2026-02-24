@@ -1,6 +1,6 @@
 Build and run the app
 ```
-docker build -t depend .
+docker build -t euler . 
 
-docker run depend
+docker run euler
 ```
