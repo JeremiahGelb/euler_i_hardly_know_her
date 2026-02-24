@@ -8,6 +8,7 @@
 #include "euler1.hpp"
 #include "euler2.hpp"
 #include "euler3.hpp"
+#include "euler4.hpp"
 
 
 template<typename ToDuration>
@@ -20,13 +21,10 @@ void time_euler(std::string name, std::function<int64_t(int64_t)> euler, int64_t
 }
 
 int main() {
-    auto euler_1_max = 1'000;
-    time_euler<std::chrono::nanoseconds>("euler_1_all_integers", euler_1_all_integers, euler_1_max);
-    time_euler<std::chrono::nanoseconds>("euler_1_all_integers_branchless", euler_1_all_integers_branchless, euler_1_max);
-    time_euler<std::chrono::nanoseconds>("euler_1_count_by", euler_1_count_by, euler_1_max);
-    time_euler<std::chrono::nanoseconds>("euler_1_count_by_branchless", euler_1_count_by_branchless, euler_1_max);
+    time_euler<std::chrono::nanoseconds>("euler_1", euler_1_count_by_branchless, 1000);
     time_euler<std::chrono::nanoseconds>("euler_2", euler_2, 4'000'000);
-    time_euler<std::chrono::nanoseconds>("euler_3", euler_3, 600851475143);
+    time_euler<std::chrono::microseconds>("euler_3", euler_3, 600851475143);
+    time_euler<std::chrono::microseconds>("euler_4", euler_4, 3);
     
     return 0;
 }
